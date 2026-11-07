@@ -10,7 +10,9 @@ import 'presentation/sections/hero_section.dart';
 import 'presentation/sections/packages_section.dart';
 import 'presentation/sections/projects_section.dart';
 import 'presentation/sections/skills_section.dart';
+import 'presentation/widgets/interactive_panel.dart';
 import 'presentation/widgets/navigation_bar.dart';
+import 'presentation/widgets/scroll_progress_indicator.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +28,7 @@ class PortfolioApp extends StatelessWidget {
       title: 'Hanif Uddin | Senior Flutter Developer & Team Lead',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        brightness: Brightness.dark,
         scaffoldBackgroundColor: AppColors.background,
         textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme),
       ),
@@ -51,11 +54,40 @@ class _PortfolioScreenState extends ConsumerState<PortfolioScreen> {
     'contact': GlobalKey(),
   };
 
+  bool _showBackToTop = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final controller = ref.read(scrollControllerProvider);
+      controller.addListener(() {
+        final shouldShow = controller.hasClients && controller.offset > 450;
+        if (shouldShow != _showBackToTop && mounted) {
+          setState(() {
+            _showBackToTop = shouldShow;
+          });
+        }
+      });
+    });
+  }
+
   void _scrollToKey(GlobalKey key) {
     final context = key.currentContext;
     if (context != null) {
       Scrollable.ensureVisible(
         context,
+        duration: const Duration(milliseconds: 650),
+        curve: Curves.easeInOutCubic,
+      );
+    }
+  }
+
+  void _scrollToTop() {
+    final controller = ref.read(scrollControllerProvider);
+    if (controller.hasClients) {
+      controller.animateTo(
+        0,
         duration: const Duration(milliseconds: 650),
         curve: Curves.easeInOutCubic,
       );
@@ -70,11 +102,65 @@ class _PortfolioScreenState extends ConsumerState<PortfolioScreen> {
       backgroundColor: AppColors.background,
       body: Stack(
         children: [
+          // Ambient Background Glow Orbs for visual depth
+          Positioned(
+            top: -100,
+            left: -100,
+            child: Container(
+              width: 500,
+              height: 500,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    AppColors.primary.withValues(alpha: 0.08),
+                    Colors.transparent,
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 700,
+            right: -150,
+            child: Container(
+              width: 600,
+              height: 600,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    AppColors.secondary.withValues(alpha: 0.07),
+                    Colors.transparent,
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 1800,
+            left: -150,
+            child: Container(
+              width: 600,
+              height: 600,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    AppColors.accent.withValues(alpha: 0.06),
+                    Colors.transparent,
+                  ],
+                ),
+              ),
+            ),
+          ),
+
+          // Main Scrollable Content
           SingleChildScrollView(
             controller: scrollController,
             child: Column(
               children: [
-                const SizedBox(height: 70), // Navigation spacer
+                const SizedBox(height: 72), // Navigation bar spacer
                 HeroSection(
                   key: _sectionKeys['hero'],
                   onProjectsClick: () =>
@@ -88,15 +174,52 @@ class _PortfolioScreenState extends ConsumerState<PortfolioScreen> {
                 SkillsSection(key: _sectionKeys['skills']),
                 ContactSection(key: _sectionKeys['contact']),
                 const _FooterWidget(),
+                const SizedBox(height: 80), // Spacer for bottom interactive dock
               ],
             ),
           ),
+
+          // Top Navigation Bar
           Positioned(
             top: 0,
             left: 0,
             right: 0,
-            child: CustomNavigationBar(sectionKeys: _sectionKeys),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CustomNavigationBar(sectionKeys: _sectionKeys),
+                ScrollProgressIndicator(scrollController: scrollController),
+              ],
+            ),
           ),
+
+          // Human Interactive Action Panel & Assistant Dock
+          InteractivePanel(sectionKeys: _sectionKeys),
+
+          // Floating Back To Top Button
+          if (_showBackToTop)
+            Positioned(
+              bottom: 28,
+              left: 28,
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 300),
+                opacity: _showBackToTop ? 1.0 : 0.0,
+                child: FloatingActionButton.small(
+                  onPressed: _scrollToTop,
+                  backgroundColor: AppColors.surface,
+                  foregroundColor: AppColors.primary,
+                  elevation: 6,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    side: BorderSide(
+                      color: AppColors.primary.withValues(alpha: 0.5),
+                    ),
+                  ),
+                  tooltip: 'Back to Top',
+                  child: const Icon(Icons.arrow_upward_rounded, size: 18),
+                ),
+              ),
+            ),
         ],
       ),
     );
@@ -109,15 +232,19 @@ class _FooterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 28),
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 20),
       decoration: const BoxDecoration(
         border: Border(top: BorderSide(color: AppColors.border, width: 0.8)),
       ),
-      child: Text(
-        '© 2026 Hanif Uddin. Engineered natively with Flutter Web & Riverpod.',
-        style: GoogleFonts.inter(
-          color: AppColors.textSecondary,
-          fontSize: 13,
+      child: Center(
+        child: Text(
+          '© 2026 Hanif Uddin. Engineered natively with Flutter Web, Clean Architecture & Riverpod.',
+          textAlign: TextAlign.center,
+          style: GoogleFonts.inter(
+            color: AppColors.textSecondary,
+            fontSize: 13,
+          ),
         ),
       ),
     );
