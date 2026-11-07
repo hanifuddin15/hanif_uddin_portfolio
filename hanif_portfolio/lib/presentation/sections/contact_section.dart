@@ -17,14 +17,14 @@ class ContactSection extends StatelessWidget {
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 850),
           child: GlassCard(
-            borderColor: AppColors.primary.withOpacity(0.5),
+            borderColor: AppColors.primary.withValues(alpha: .5),
             padding: const EdgeInsets.all(40),
             child: Column(
               children: [
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: AppColors.primary.withOpacity(0.1),
+                    color: AppColors.primary.withValues(alpha: .1),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(Icons.rocket_launch_rounded,
@@ -59,7 +59,7 @@ class ContactSection extends StatelessWidget {
                     ElevatedButton.icon(
                       onPressed: () => UrlUtils.launchMail(PortfolioData.email),
                       icon: const FaIcon(FontAwesomeIcons.envelope, size: 16),
-                      label: Text(PortfolioData.email),
+                      label: const Text(PortfolioData.email),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.primary,
                         foregroundColor: Colors.black,
@@ -75,7 +75,7 @@ class ContactSection extends StatelessWidget {
                       onPressed: () =>
                           UrlUtils.launchPhone(PortfolioData.phone),
                       icon: const FaIcon(FontAwesomeIcons.whatsapp, size: 16),
-                      label: Text(PortfolioData.phone),
+                      label: const Text(PortfolioData.phone),
                       style: OutlinedButton.styleFrom(
                         foregroundColor: AppColors.accent,
                         side: const BorderSide(

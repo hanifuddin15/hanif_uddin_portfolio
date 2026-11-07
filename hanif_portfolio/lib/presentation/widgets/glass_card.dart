@@ -19,15 +19,15 @@ class GlassCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.surface.withOpacity(0.75),
+        color: AppColors.surface.withValues(alpha: .75),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: borderColor ?? AppColors.border.withOpacity(0.6),
+          color: borderColor ?? AppColors.border.withValues(alpha: .6),
           width: 1.2,
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
+            color: Colors.black.withValues(alpha: .3),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
@@ -39,8 +39,8 @@ class GlassCard extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
           onTap: onTap,
-          splashColor: AppColors.primary.withOpacity(0.1),
-          highlightColor: AppColors.primary.withOpacity(0.05),
+          splashColor: AppColors.primary.withValues(alpha: .1),
+          highlightColor: AppColors.primary.withValues(alpha: .05),
           child: Padding(
             padding: padding ?? const EdgeInsets.all(24),
             child: child,

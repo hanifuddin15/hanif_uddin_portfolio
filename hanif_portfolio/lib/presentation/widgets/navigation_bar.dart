@@ -27,7 +27,7 @@ class CustomNavigationBar extends ConsumerWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
       decoration: BoxDecoration(
-        color: AppColors.background.withOpacity(0.85),
+        color: AppColors.background.withValues(alpha: .85),
         border: const Border(
             bottom: BorderSide(color: AppColors.border, width: 0.8)),
       ),

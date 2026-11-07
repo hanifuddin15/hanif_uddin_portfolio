@@ -64,7 +64,7 @@ class HeroSection extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.surfaceLight,
             borderRadius: BorderRadius.circular(30),
-            border: Border.all(color: AppColors.primary.withOpacity(0.4)),
+            border: Border.all(color: AppColors.primary.withValues(alpha: .4)),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
@@ -189,7 +189,7 @@ class HeroSection extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.primary.withOpacity(0.35),
+              color: AppColors.primary.withValues(alpha: .35),
               blurRadius: 40,
               spreadRadius: 2,
             ),

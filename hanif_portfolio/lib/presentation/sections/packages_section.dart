@@ -63,10 +63,11 @@ class PackagesSection extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 4),
                               decoration: BoxDecoration(
-                                color: AppColors.accent.withOpacity(0.15),
+                                color: AppColors.accent.withValues(alpha: .15),
                                 borderRadius: BorderRadius.circular(12),
                                 border: Border.all(
-                                    color: AppColors.accent.withOpacity(0.4)),
+                                    color:
+                                        AppColors.accent.withValues(alpha: .4)),
                               ),
                               child: Text(
                                 pkg.downloads,
