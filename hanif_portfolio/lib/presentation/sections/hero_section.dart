@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hanif_portfolio/data/protfolio_data.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/constants/app_links.dart';
 import '../../core/utils/url_utils.dart';
 import '../widgets/animated_reveal.dart';
 
@@ -295,7 +296,7 @@ class _HeroSectionState extends State<HeroSection>
                   child: CircleAvatar(
                     radius: 145,
                     backgroundImage: NetworkImage(
-                      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Hanif%20JPG-ixXCWpDg3vxVrdygfqi05HDGk80wq9.jpeg',
+                      AppLinks.avatarUrl,
                     ),
                   ),
                 ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../core/constants/app_assets.dart';
+import '../core/constants/app_links.dart';
 import 'models/experience_model.dart';
 import 'models/package_model.dart';
 import 'models/project_model.dart';
@@ -10,10 +12,10 @@ class PortfolioData {
   static const String email = 'hanifuddin.dev@gmail.com';
   static const String phone = '+8801963978074';
   static const String location = '2no road, Chad Uddan, Dhaka, Bangladesh';
-  static const String github = 'https://github.com/hanifuddin15';
-  static const String linkedin = 'https://linkedin.com/in/hanifuddin';
-  static const String whatsapp = 'https://wa.me/8801963978074';
-  static const String resumeUrl = 'https://github.com/hanifuddin15';
+  static const String github = AppLinks.github;
+  static const String linkedin = AppLinks.linkedin;
+  static const String whatsapp = AppLinks.whatsapp;
+  static const String resumeUrl = AppLinks.resume;
 
   static const List<ProjectModel> projects = [
     ProjectModel(
@@ -23,8 +25,7 @@ class PortfolioData {
           'Spearheaded the end-to-end architecture and multi-platform deployment of an enterprise suite integrating biometric attendance, vehicle fleet management (VMS), and multi-tier approval workflows.',
       category: 'Enterprise ERP',
       impactMetric: '10K+ Active Workforce',
-      imageUrl:
-          'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+      imageUrl: AppAssets.erp,
       gradientColors: [Color(0xFF0D47A1), Color(0xFF00E5FF)],
       techStack: [
         'Flutter',
@@ -40,9 +41,8 @@ class PortfolioData {
         'Vehicle Management System (VMS) tracking & product requisition modules',
         'Analytics dashboards & document viewing with zero performance degradation',
       ],
-      appStoreUrl: 'https://apps.apple.com/us/app/cripton-erp/id6478108512',
-      playStoreUrl:
-          'https://play.google.com/store/apps/details?id=com.worknestor.criptonpro',
+      appStoreUrl: AppLinks.criptonErpAppStore,
+      playStoreUrl: AppLinks.criptonErpPlayStore,
     ),
     ProjectModel(
       title: 'Quantum Possibilities',
@@ -51,8 +51,7 @@ class PortfolioData {
           'Architected a social media platform supporting millions of users with live video streaming, reels feed engine, peer interactions, and built-in crypto payments.',
       category: 'Social & Crypto',
       impactMetric: '100K+ Engagements',
-      imageUrl:
-          'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+      imageUrl: AppAssets.qp,
       gradientColors: [Color(0xFF6200EA), Color(0xFFE040FB)],
       techStack: [
         'Flutter',
@@ -69,9 +68,8 @@ class PortfolioData {
         'Multi-gateway payment checkout (SSLCOMMERZ, Stripe, Crypto)',
         'CI/CD automated release pipeline via GitHub Actions',
       ],
-      appStoreUrl: 'https://apps.apple.com/ae/app/qposs/id6753131108',
-      playStoreUrl:
-          'https://play.google.com/store/apps/details?id=com.quanumpossibilities.qp',
+      appStoreUrl: AppLinks.qpAppStore,
+      playStoreUrl: AppLinks.qpPlayStore,
     ),
     ProjectModel(
       title: 'QP Messenger',
@@ -80,8 +78,7 @@ class PortfolioData {
           'Engineered a scalable messaging platform delivering real-time group conversations, file streaming, voice and video conferencing.',
       category: 'WebRTC & Media',
       impactMetric: '<100ms Voice/Video Latency',
-      imageUrl:
-          'https://images.unsplash.com/photo-1614680376593-902f749f7ffc?auto=format&fit=crop&w=800&q=80',
+      imageUrl: AppAssets.messenger,
       gradientColors: [Color(0xFF00B0FF), Color(0xFF00E676)],
       techStack: [
         'Flutter',
@@ -96,9 +93,101 @@ class PortfolioData {
         'Real-time typing indicators, message delivery status, & presence',
         'Native platform channels for background call handling',
       ],
-      appStoreUrl: 'https://apps.apple.com/ae/app/qposs-messenger/id6753579477',
-      playStoreUrl:
-          'https://play.google.com/store/apps/details?id=com.qp.messenger',
+      appStoreUrl: AppLinks.qpMessengerAppStore,
+      playStoreUrl: AppLinks.qpMessengerPlayStore,
+    ),
+    ProjectModel(
+      title: 'SqueezePix',
+      tagLine: 'Batch Image Compression, Optimization & Format Converter',
+      description:
+          'High-efficiency mobile utility for multithreaded image compression, aspect ratio resizing, and lossless WebP/JPEG conversion with isolate background execution.',
+      category: 'Utility & Tools',
+      impactMetric: 'Up to 90% Size Reduction',
+      imageUrl: AppAssets.squeezePix,
+      gradientColors: [Color(0xFF6A11CB), Color(0xFF2575FC)],
+      techStack: [
+        'Flutter',
+        'Dart Isolates',
+        'Method Channels',
+        'Riverpod',
+        'Clean Architecture',
+        'Scoped Storage'
+      ],
+      highlights: [
+        'Multithreaded background processing using Dart Isolates for zero UI jank',
+        'Lossless and lossy compression engine with real-time before/after preview',
+        'Batch gallery exporter supporting WebP, PNG, and JPEG formatting',
+      ],
+    ),
+    ProjectModel(
+      title: 'Kambaii Health Provider',
+      tagLine: 'HIPAA-Compliant Clinical Telehealth & Provider Scheduling Suite',
+      description:
+          'Healthcare provider application designed for licensed clinicians to manage patient schedules, conduct secure telemedicine consultations, and synchronize encrypted medical charts.',
+      category: 'Healthcare & Telehealth',
+      impactMetric: 'HIPAA Compliant Provider Suite',
+      imageUrl: AppAssets.kambaiiHealth,
+      gradientColors: [Color(0xFF0072FF), Color(0xFF00C6FF)],
+      techStack: [
+        'Flutter',
+        'BLoC',
+        'WebRTC',
+        'Firebase',
+        'SQLite',
+        'REST API'
+      ],
+      highlights: [
+        'Encrypted peer-to-peer telemedicine consultations with live vitals telemetry',
+        'Automated doctor shift management, e-prescription generation, and patient queues',
+        'Resilient offline patient record caching with encrypted local SQLite persistence',
+      ],
+    ),
+    ProjectModel(
+      title: 'Pakiza LMS (Education Suite)',
+      tagLine: 'Institutional Learning Management & Interactive Video Platform',
+      description:
+          'Scalable educational platform supporting live classes, video course delivery with adaptive bitrate streaming, interactive quiz modules, and offline lesson downloads.',
+      category: 'EdTech & LMS',
+      impactMetric: '15K+ Active Learners',
+      imageUrl: AppAssets.lms,
+      gradientColors: [Color(0xFFFF512F), Color(0xFFDD2476)],
+      techStack: [
+        'Flutter',
+        'Clean Architecture',
+        'BLoC',
+        'HLS / RTMP',
+        'REST API',
+        'SQLite',
+        'FCM'
+      ],
+      highlights: [
+        'Adaptive HLS video streaming lecture player with playback speed and resume features',
+        'Interactive quiz engine with timer controls, randomized question banks, and instant grading',
+        'Background lecture download manager enabling full offline coursework study',
+      ],
+    ),
+    ProjectModel(
+      title: 'Nusa (Multi-Vendor Marketplace)',
+      tagLine: 'High-Volume E-Commerce, Lifestyle & Multi-Vendor Hub',
+      description:
+          'Cross-platform retail marketplace connecting verified merchants and consumers with real-time delivery tracking, multi-gateway payments, and localized catalogs.',
+      category: 'E-Commerce & Retail',
+      impactMetric: 'Multi-Vendor Ecosystem',
+      imageUrl: AppAssets.nusa,
+      gradientColors: [Color(0xFF11998E), Color(0xFF38EF7D)],
+      techStack: [
+        'Flutter',
+        'GetX',
+        'REST API',
+        'Payment Gateways',
+        'Google Maps SDK',
+        'FCM'
+      ],
+      highlights: [
+        'Merchant storefront architecture with dynamic categorization and real-time inventory',
+        'Live order dispatch tracking integrated with Google Maps SDK and courier updates',
+        'Seamless multi-gateway payment checkout with automated refund webhooks',
+      ],
     ),
     ProjectModel(
       title: 'MemeVerse',
@@ -107,8 +196,7 @@ class PortfolioData {
           'Social platform integrating generative AI models to curate dynamic meme captioning, template generation, and algorithmic feed delivery.',
       category: 'AI & Social',
       impactMetric: 'Generative AI Integrated',
-      imageUrl:
-          'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+      imageUrl: AppAssets.memeVerse,
       gradientColors: [Color(0xFFFF3D00), Color(0xFFFFD600)],
       techStack: [
         'Flutter',
@@ -130,10 +218,9 @@ class PortfolioData {
       tagLine: 'Cross-Platform Community & Career Hub',
       description:
           'Community application for textile engineers facilitating networking, hiring boards, events, and real-time private discussions.',
-      category: 'Community',
+      category: 'Community & Alumni',
       impactMetric: '5K+ Alumni Connected',
-      imageUrl:
-          'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+      imageUrl: AppAssets.austtaa,
       gradientColors: [Color(0xFF2E7D32), Color(0xFF00E676)],
       techStack: [
         'Flutter',
@@ -147,17 +234,16 @@ class PortfolioData {
         'Event management, job portal, and real-time direct messaging',
         'Offline caching and resilient local data sync with SQLite',
       ],
-      playStoreUrl: 'https://surl.li/mumvnt',
+      playStoreUrl: AppLinks.austtaaPlayStore,
     ),
     ProjectModel(
       title: 'ShopySwiss E-Commerce',
       tagLine: 'High-Converting Multi-Platform Retail Application',
       description:
           'Full-featured consumer shopping app with cart state management, checkout flows, live tracking, and localized content delivery.',
-      category: 'E-Commerce',
+      category: 'E-Commerce & Retail',
       impactMetric: '4.9★ App Store Rating',
-      imageUrl:
-          'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80',
+      imageUrl: AppAssets.shopySwiss,
       gradientColors: [Color(0xFFD50000), Color(0xFFFF5252)],
       techStack: [
         'Flutter',
@@ -171,7 +257,7 @@ class PortfolioData {
         'Cart state synchronization with local SQLite persistence',
         'Comprehensive order tracking with push notification triggers',
       ],
-      playStoreUrl: 'https://surl.lt/csekbf',
+      playStoreUrl: AppLinks.shopySwissPlayStore,
     ),
   ];
 
@@ -354,14 +440,14 @@ class PortfolioData {
       description:
           'A flexible, highly customizable search delegate with dynamic filtering algorithms and custom UI builders.',
       downloads: '400+ Downloads',
-      url: 'https://pub.dev/packages/super_search_delegate',
+      url: AppLinks.superSearchDelegatePackage,
     ),
     PackageModel(
       name: 'universal_dropdown',
       description:
           'Generic, high-performance dropdown widget supporting single/multi selection, debounced search, and custom items.',
       downloads: '500+ Downloads',
-      url: 'https://pub.dev/packages/universal_dropdown',
+      url: AppLinks.universalDropdownPackage,
     ),
   ];
 

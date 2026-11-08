@@ -60,7 +60,7 @@ class ProjectDetailModal extends StatelessWidget {
                       children: [
                         ProjectMockupWidget(
                           project: project,
-                          height: 220,
+                          height: 260,
                           isInteractive: false,
                         ),
                         Positioned(

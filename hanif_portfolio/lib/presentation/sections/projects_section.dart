@@ -21,14 +21,13 @@ class ProjectsSection extends StatefulWidget {
 class _ProjectsSectionState extends State<ProjectsSection> {
   String _selectedCategory = 'All';
 
-  final List<String> _categories = [
-    'All',
-    'Enterprise ERP',
-    'Social & Crypto',
-    'WebRTC & Media',
-    'AI & Social',
-    'E-Commerce',
-  ];
+  List<String> get _categories {
+    final categories = <String>{'All'};
+    for (final p in PortfolioData.projects) {
+      categories.add(p.category);
+    }
+    return categories.toList();
+  }
 
   List<ProjectModel> get _filteredProjects {
     if (_selectedCategory == 'All') {
