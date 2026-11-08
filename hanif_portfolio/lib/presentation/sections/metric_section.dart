@@ -43,7 +43,7 @@ class _MetricsSectionState extends State<MetricsSection>
 
     final metrics = [
       {
-        'value': 3.5,
+        'value': 4,
         'suffix': '+',
         'isDecimal': true,
         'label': 'Years of Experience',
@@ -167,7 +167,8 @@ class _MetricsSectionState extends State<MetricsSection>
                                 value: (m['progress'] as double) *
                                     _animation.value,
                                 backgroundColor: AppColors.surfaceLight,
-                                valueColor: AlwaysStoppedAnimation<Color>(color),
+                                valueColor:
+                                    AlwaysStoppedAnimation<Color>(color),
                               ),
                             ),
                           ),

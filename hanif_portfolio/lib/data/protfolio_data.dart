@@ -121,7 +121,8 @@ class PortfolioData {
     ),
     ProjectModel(
       title: 'Kambaii Health Provider',
-      tagLine: 'HIPAA-Compliant Clinical Telehealth & Provider Scheduling Suite',
+      tagLine:
+          'HIPAA-Compliant Clinical Telehealth & Provider Scheduling Suite',
       description:
           'Healthcare provider application designed for licensed clinicians to manage patient schedules, conduct secure telemedicine consultations, and synchronize encrypted medical charts.',
       category: 'Healthcare & Telehealth',
@@ -266,7 +267,7 @@ class PortfolioData {
       name: 'Flutter & Dart Framework',
       category: 'Mobile & Architecture',
       proficiency: 0.98,
-      experience: '3.5+ Years',
+      experience: '4+ Years',
       level: 'Lead / Master',
       tags: ['Cross-Platform', 'Null Safety', 'Animations', 'RenderObjects'],
       description:
@@ -326,7 +327,7 @@ class PortfolioData {
       name: 'REST APIs & GraphQL',
       category: 'Backend & Cloud',
       proficiency: 0.95,
-      experience: '3.5+ Years',
+      experience: '4+ Years',
       level: 'Production Expert',
       tags: ['Dio Interceptors', 'Token Refresh', 'Caching', 'Error Handling'],
       description:
@@ -376,7 +377,7 @@ class PortfolioData {
       name: 'Git, FVM & Team Leadership',
       category: 'DevOps & Tooling',
       proficiency: 0.95,
-      experience: '3.5+ Years',
+      experience: '4+ Years',
       level: 'Lead / Mentor',
       tags: ['GitFlow', 'Code Reviews', 'Sprint Planning', 'FVM Versioning'],
       description:
