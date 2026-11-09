@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hanif_portfolio/presentation/providers/proftfolio_providers.dart';
 import 'package:hanif_portfolio/presentation/sections/metric_section.dart';
@@ -16,6 +17,7 @@ import 'presentation/widgets/scroll_progress_indicator.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  usePathUrlStrategy();
   runApp(const ProviderScope(child: PortfolioApp()));
 }
 
