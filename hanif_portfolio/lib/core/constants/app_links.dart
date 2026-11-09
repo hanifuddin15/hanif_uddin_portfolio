@@ -6,6 +6,10 @@ class AppLinks {
       'https://apps.apple.com/ae/app/qposs/id6753131108';
   static const String qpMessengerAppStore =
       'https://apps.apple.com/ae/app/qposs-messenger/id6753579477';
+  static const String austtaaAppStore =
+      'https://apps.apple.com/ae/app/austtaa/id1662060915';
+  static const String shopySwissAppStore =
+      'https://apps.apple.com/ae/app/shopyswiss/id1626706201';
 
   // Google Play Store Links
   static const String criptonErpPlayStore =
@@ -14,8 +18,16 @@ class AppLinks {
       'https://play.google.com/store/apps/details?id=com.quanumpossibilities.qp';
   static const String qpMessengerPlayStore =
       'https://play.google.com/store/apps/details?id=com.qp.messenger';
-  static const String austtaaPlayStore = 'https://surl.li/mumvnt';
-  static const String shopySwissPlayStore = 'https://surl.lt/csekbf';
+  static const String austtaaPlayStore =
+      'https://play.google.com/store/apps/details?id=com.psl.austtaa.aust_textile_alumni';
+  static const String shopySwissPlayStore =
+      'https://play.google.com/store/apps/details?id=com.dinnova.shopyswiss';
+  static const String nusaPlayStore =
+      'https://play.google.com/store/apps/details?id=com.nusa.nagoriksheba';
+  static const String kambaiiHealthPlayStore =
+      'https://play.google.com/store/apps/details?id=com.kambaii.fitness';
+  static const String squeezePixPlayStore =
+      'https://play.google.com/store/apps/details?id=com.hanif.squeezepix';
 
   // Social & Direct Profiles
   static const String github = 'https://github.com/hanifuddin15';
@@ -33,4 +45,3 @@ class AppLinks {
   static const String avatarUrl =
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Hanif%20JPG-ixXCWpDg3vxVrdygfqi05HDGk80wq9.jpeg';
 }
-

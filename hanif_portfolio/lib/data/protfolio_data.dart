@@ -118,6 +118,7 @@ class PortfolioData {
         'Lossless and lossy compression engine with real-time before/after preview',
         'Batch gallery exporter supporting WebP, PNG, and JPEG formatting',
       ],
+      playStoreUrl: AppLinks.squeezePixPlayStore,
     ),
     ProjectModel(
       title: 'Kambaii Health Provider',
@@ -142,6 +143,7 @@ class PortfolioData {
         'Automated doctor shift management, e-prescription generation, and patient queues',
         'Resilient offline patient record caching with encrypted local SQLite persistence',
       ],
+      playStoreUrl: AppLinks.kambaiiHealthPlayStore,
     ),
     ProjectModel(
       title: 'Pakiza LMS (Education Suite)',
@@ -189,6 +191,7 @@ class PortfolioData {
         'Live order dispatch tracking integrated with Google Maps SDK and courier updates',
         'Seamless multi-gateway payment checkout with automated refund webhooks',
       ],
+      playStoreUrl: AppLinks.nusaPlayStore,
     ),
     ProjectModel(
       title: 'MemeVerse',
@@ -235,6 +238,7 @@ class PortfolioData {
         'Event management, job portal, and real-time direct messaging',
         'Offline caching and resilient local data sync with SQLite',
       ],
+      appStoreUrl: AppLinks.austtaaAppStore,
       playStoreUrl: AppLinks.austtaaPlayStore,
     ),
     ProjectModel(
@@ -258,6 +262,7 @@ class PortfolioData {
         'Cart state synchronization with local SQLite persistence',
         'Comprehensive order tracking with push notification triggers',
       ],
+      appStoreUrl: AppLinks.shopySwissAppStore,
       playStoreUrl: AppLinks.shopySwissPlayStore,
     ),
   ];
